@@ -69,10 +69,6 @@ static inline NSString* cachePathForKey(NSString* directory, NSString* key) {
 	return instance;
 }
 
-+ (NSString*)cachePathForKey:(NSString*)key {
-    return cachePathForKey(_directory, key);
-}
-
 - (id)init {
 	NSString* cachesDirectory = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
 	NSString* oldCachesDirectory = [[[cachesDirectory stringByAppendingPathComponent:[[NSProcessInfo processInfo] processName]] stringByAppendingPathComponent:@"EGOCache"] copy];
@@ -378,6 +374,11 @@ static inline NSString* cachePathForKey(NSString* directory, NSString* key) {
 
 - (void)setObject:(id<NSCoding>)anObject forKey:(NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval {
 	[self setData:[NSKeyedArchiver archivedDataWithRootObject:anObject] forKey:key withTimeoutInterval:timeoutInterval];
+}
+
+
+- (NSString *)cachePathForKey:(NSString *)key {
+    return cachePathForKey(_directory, key);
 }
 
 #pragma mark -

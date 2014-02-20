@@ -37,8 +37,6 @@
 // Global cache for easy use
 + (instancetype)globalCache;
 
-+ (NSString*)cachePathForKey:(NSString*)key; 
-
 // Opitionally create a different EGOCache instance with it's own cache directory
 - (id)initWithCacheDirectory:(NSString*)cacheDirectory;
 
@@ -78,6 +76,8 @@
 - (id<NSCoding>)objectForKey:(NSString*)key;
 - (void)setObject:(id<NSCoding>)anObject forKey:(NSString*)key;
 - (void)setObject:(id<NSCoding>)anObject forKey:(NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
+
+- (NSString*)cachePathForKey:(NSString *)key;
 
 @property(nonatomic,assign) NSTimeInterval defaultTimeoutInterval; // Default is 1 day
 @end
