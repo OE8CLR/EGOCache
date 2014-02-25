@@ -23,6 +23,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
+//  FORK from Christoph Lückler ( https://github.com/OE8CLR/EGOCache )
+//
 
 #import <Foundation/Foundation.h>
 
@@ -77,7 +79,7 @@
 - (void)setObject:(id<NSCoding>)anObject forKey:(NSString*)key;
 - (void)setObject:(id<NSCoding>)anObject forKey:(NSString*)key withTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
-- (NSString*)cachePathForKey:(NSString *)key;
+- (NSString *)cachePathForKey:(NSString *)key;
 
 @property(nonatomic,assign) NSTimeInterval defaultTimeoutInterval; // Default is 1 day
 @end
